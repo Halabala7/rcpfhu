@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
 body{
     background-color: #FFFFFF;
@@ -29,24 +30,41 @@ body{
     font-size: 26px;
     overflow: hidden;
     background-image: url("images/bg2.png");
+   
     
 
 }
+
 #title-content{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center; 
     width: 100%;
-
+    animation: title-animation 1s forwards;
+    animation-delay: 3s;
     
 }
-#title-content h1{
+@keyframes title-animation {
+    from
+    {
+        gap: 0;
+    }
+    to
+    {
+        gap: 10%;
+    }
+}
+
+#title h1{
     letter-spacing: 10px;
     font-weight:  900;
     animation: h1_animation 2s steps(40, end);
-    white-space: nowrap; /* Keeps the content on a single line */
+    white-space: nowrap; 
     margin: 0 auto;
     overflow: hidden;
+    width: 100%;
+    text-align: center;
 }
 @keyframes h1_animation {
      0%
@@ -63,11 +81,11 @@ body{
      }
      50%
      {
-        width: 37%;
+        width: 33%;
      }
      70%
      {
-        width: 37%;
+        width: 33%;
      }
      80%
      {
@@ -78,9 +96,54 @@ body{
         width: 56%;
      }
 }
+#stats{
+    display: none;
+    background-color: #dff3fc;
+    border-radius: 10px;
+    width: 500px;
+    height: 250px;
+    margin-top: 30px;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
+@keyframes stats-animation{
+    from
+    {
+        opacity: 0;
+        display: none;
+    }
+    to
+    {
+        opacity: 1;
+        display: flex;
+    }
+}
+.block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #20221B;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+#firstData{
+    width: 60px;
+    height: 35px;
+    background-color: #525252;
+}
+#secondData{
+    width: 60px;
+    height: 100px;
+    background-color: #2F95D3;
+}
+#thirdData{
+    width: 60px;
+    height: 200px;
+    background-color: #ffc73c;
+}
 #title-content ul{
-    padding: 0;
-    margin: 0;
     text-align: center;
 }
 #title-content li{
@@ -93,39 +156,56 @@ body{
     margin-top: 30px;
     box-shadow: 5px 4px 0px 0px;
     border: 1px solid #117E7E;
+    border-right: 1px solid #ffffffd0;
+    border-bottom: 1px solid #ffffffd0;
     font-size: 25px;
+    opacity: 0;
 
 }
-#title-content li:hover{
-    animation: button-hover-animation 0.5s;
-    background-color: #159595;
+.baner-button.loaded {
+  animation: button-load-animation 1s;
 }
 @keyframes button-load-animation {
-    0%
-    {
+     0% 
+     {
+        transform: translateY(-200%) rotate(15deg);
+        
         opacity: 0;
         box-shadow: 0px 0px 0px 0px #ffffffd0;
+
     }
-    80%
+    60% 
     {
+        
+        transform: translateY(20%) rotate(-10deg);
         opacity: 1;
         box-shadow: 0px 0px 0px 0px #ffffffd0;
     }
-    100%
+    80% 
     {
-        opacity: 1;
-        box-shadow: 5px 4px 0px 0px #ffffffd0;
-        
+        transform: translateY(-10%) rotate(5deg);
     }
+    100% 
+    {
+        
+        transform: translateY(0) rotate(0deg);
+        box-shadow: 5px 4px 0px 0px #ffffffd0;
+    }
+}
+#title-content li:hover{
+    
+    animation: button-hover-animation 0.3s;
+    background-color: #159595;
 }
 @keyframes button-hover-animation {
     0%
     {
         box-shadow: 5px 4px 0px 0px #ffffffd0;
+        transform: translateY(-1%) rotate(2deg);
     }
-    50%
+    40%
     {
-        box-shadow: -5px 4px 0px 0px #ffffffd0;
+        box-shadow: -1px 4px 0px 0px #ffffffd0;
     }
     100%
     {
@@ -137,7 +217,7 @@ body{
 {
     width: 25%;
     position: absolute;
-    top: 14%;
+    top: 10%;
     right: 0;
     z-index: 1;
 }
