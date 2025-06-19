@@ -8,7 +8,7 @@
 }
 body{
     background-color: #FFFFFF;
-    min-width: 100vw;
+    min-width: 100%;
     min-height: 100vh;
     font-family: "Roboto", sans-serif;
 }
@@ -97,6 +97,7 @@ body{
     overflow: hidden;
 }
 #title h1{
+   
     letter-spacing: 10px;
     animation: h1_animation 2.5s steps(40, end);
     white-space: nowrap; 
@@ -166,6 +167,7 @@ body{
     width: 100%;
     background-color: white;
     flex-direction: column;
+    
 }
 #content{
     display: flex;
@@ -173,14 +175,16 @@ body{
     margin-left: 10%;
     margin-top: 3%;
     width: 80%;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     justify-content: space-around;
     z-index: 1;
+    
 }
 #content h3{
     margin-top: 10%;
     letter-spacing: 3px;
     font-size: 32px;
+    
 }
 #content p{
     margin-top: 20px;
@@ -204,7 +208,7 @@ body{
 }
 
 #stats_container{
-    
+    font-family: 'Segoe UI', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -218,7 +222,7 @@ body{
 .box{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 49%;
     height: 100%;
     justify-content: flex-end;
     align-items: center;
@@ -246,6 +250,12 @@ body{
     margin-bottom: 5%;
     align-items: flex-end;
     justify-content: space-evenly;
+    box-shadow: 5px 29px 45px -28px rgba(66, 68, 90, 1);
+}
+#graph_title{
+    
+    letter-spacing: 5px;
+    
 }
 @keyframes stats-animation{
     from
@@ -272,17 +282,29 @@ body{
 #firstData{
     width: 60px;
     height: 35px;
-    background-color: #525252;
+    background-color: #FF5E5B;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 5px 0px 0px;
 }
 #secondData{
     width: 60px;
     height: 100px;
     background-color: #2F95D3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 5px 0px 0px;
 }
 #thirdData{
     width: 60px;
     height: 200px;
     background-color: #ffc73c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px 5px 0px 0px;
 }
 #group_picture{
     display: contents;
@@ -291,6 +313,74 @@ body{
     width: 60%;
 }
 
+#how_to_get_started{
+    width: 100%;
+    height: 500px;
+   
+}
+#tutorial
+{
+    width: 80%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+#wave{
+    margin-bottom: -1px;
+}
+#footer{
+    width: 100%;
+    height: 200px;
+    background-color: rgb(46, 46, 55, 1);
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+   
+}
+.footer_column{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
+    
+}
+.footer_column h3{
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+#contact h3{
+    text-align: center;
+}
+#contact ul{
+    list-style-type: none;
+}
+#socials{
+    text-align: center;
+}
+#icons{
+    font-size: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#icons i{
+    margin: 10px;
+    color: white;
+    opacity: 0.8;
+}
+#icons i:hover{
+    opacity: 1;
+}
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+  background-color: rgb(46, 46, 55, 1);
+}
+/*
 #title-content ul{
     text-align: center;
 }
@@ -361,3 +451,4 @@ body{
     }
 }
 
+*/
