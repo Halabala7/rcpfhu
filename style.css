@@ -50,16 +50,7 @@ body{
     color: var(--body-text-color);
    
 }
-.custom_hr{
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    z-index: 0;
-    height: 3px;
-    background-color: var(--custom_hr-bg-color);
-    border: none;
-    border-radius: 20px;
-}
+
 #navbar{
     display: flex;
     position: fixed;
@@ -240,7 +231,7 @@ input:checked + .slider:before {
 #title h1{
    
     letter-spacing: 10px;
-    animation: h1_animation 2.5s steps(40, end);
+    animation: h1_animation 2s steps(100, end);
     white-space: nowrap; 
     margin: 0 auto;
     overflow: hidden;
@@ -293,8 +284,8 @@ input:checked + .slider:before {
     margin-left: 80px;
     opacity: 0;
     animation: show_title_button 1.5s forwards;
-    animation-delay: 2s;
-    transition: 0.5s;
+    animation-delay: 1.5s;
+    transition: 0.3s;
 }
 @keyframes show_title_button {
     from{opacity: 0;}
@@ -318,11 +309,22 @@ input:checked + .slider:before {
     position: relative;
     width: 5%; 
     margin: 10px;
+    margin-top: 2%;
             
 }
 @keyframes show_main {
     from{opacity: 0;}
     to{opacity: 1;}
+}
+.custom_hr{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 0;
+    height: 3px;
+    background-color: var(--custom_hr-bg-color);
+    border: none;
+    border-radius: 20px;
 }
 #content{
     display: flex;
@@ -597,12 +599,14 @@ input:checked + .slider:before {
 /* Dodane na końcu — rozszerzenia do animacji fade-in */
 #content,
 #stats_container,
-#how_to_get_started {
+#how_to_get_started, #content_wrapper, #arrow_stats, #arrow_content {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 1s ease-out, transform 1s ease-out;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-
+#arrow_content, #arrow_stats{
+    transition-delay: 1s;
+}
 .visible {
   opacity: 1 !important;
   transform: translateY(0) !important;
@@ -613,7 +617,7 @@ input:checked + .slider:before {
 .tutorial_steps {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
+  transition: opacity 0.5s ease-out 0.5s, transform 0.5s ease-out 0.5s;
 }
 .tutorial_steps.visible {
   opacity: 1;

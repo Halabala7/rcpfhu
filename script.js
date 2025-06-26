@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   const nav = document.getElementById("navbar");
   const content = document.getElementById("content");
+  const wrapper = document.getElementById("content_wrapper");
+  const arrow_content = document.getElementById("arrow_content")
   const stats = document.getElementById("stats_container");
+  const arrowStats = document.getElementById("arrow_stats");
   const howToStart = document.getElementById("how_to_get_started");
   const steps = document.querySelectorAll(".tutorial_steps");
   const graphStats = document.querySelectorAll(".graph_stats");
@@ -18,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         content.classList.add("visible");
+        wrapper.classList.add("visible");
+        arrow_content.classList.add("visible");
         observer.unobserve(entry.target); // tylko raz
       }
     });
@@ -33,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         graphStats.forEach(el => el.classList.add("animated"));
         circleProgress(progressCircle);
-
+        arrowStats.classList.add("visible");
         observer.unobserve(entry.target);
       }
     });
