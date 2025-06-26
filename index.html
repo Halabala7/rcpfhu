@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="">
 <head>
-    <link rel="stylesheet" href="style.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Dawid Halamoda">
-    <title>rejestrator czasu pracy</title>
-    <script src="https://kit.fontawesome.com/5468be5b5c.js" crossorigin="anonymous"></script>
+  <!-- Preconnect (krótszy czas oczekiwania na czcionki) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Preload czcionki z odpowiednim typem -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap">
+  </noscript>
+
+  <!-- Własny CSS -->
+  <link rel="stylesheet" href="/style.css">
+
+
+  <!-- Ikonki FontAwesome (ładuj tylko jeśli naprawdę potrzebne) -->
+  <script src="https://kit.fontawesome.com/5468be5b5c.js" crossorigin="anonymous" async></script>
+
+  <!-- Skrypty -->
+  <script src="/script.js" defer></script>
+
+  <!-- Podstawowe meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Dawid Halamoda">
+
+  <!-- Tytuł -->
+  <title>Rejestrator czasu pracy</title>
 </head>
+
 <body>
     
     <a id="top"></a>
@@ -29,8 +52,8 @@
         
     </div>
     <div id="video_container">
-    <video autoplay muted loop id="myVideo">
-        <source src="images/bgvideo.webm" type="video/mp4" >
+    <video autoplay muted loop id="myVideo" width="1280" height="720">
+        <source src="images/bgvideo.webm" type="video/webm" >
     </video>
     <hr>    
     </div>
@@ -50,40 +73,55 @@
                     <p>W świecie, gdzie <b>czas to pieniądz</b>, dokładna rejestracja czasu pracy to klucz do efektywności, oszczędności i porządku w firmie. Nasz system to nowoczesne rozwiązanie stworzone z myślą o firmach, które chcą działać <b>szybciej, mądrzej i bardziej przejrzyście.</b></p>
                     
                 </div>
-                <span id="sleeping_employee_image" style="display: contents;"><img src="images/sleeping_employee-removebg-preview.png"></span>
+                
+                <picture id="sleeping_employee_image" style="display: contents;">
+                    <source srcset="images/sleeping_employee.avif" type="image/avif">
+                    <img src="images/sleeping_employee.png" alt="sleeping_employee" width="704" height="664">
+                </picture>
+                    
             </div>
             <hr class="custom_hr" style="margin-top: -2.4%;">
-            <img src="images/arrow.png" class="arrow" style="position: relative;width: 5%;rotate: 110deg; left: 55%; margin: 10px;"> 
+            <picture>
+                <source srcset="images/arrow.avif" type="image/avif">
+                 <img src="images/arrow.png" class="arrow" alt="arrow" width="64" height="64" style="transform: rotate(110deg); left: 55%;">
+            </picture>
+            
             <div id="stats_container">
                 <div class="box">
                     <div id="stats">
                         <div>
                             <svg width="150" height="130" viewBox="-25 -25 250 250" version="1.1" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(-90deg)">
                                 <circle r="90" cx="100" cy="100" fill="transparent" stroke="#CCCCCC" stroke-width="13px"></circle>
-                                <circle r="90" cx="100" cy="100" stroke="#ffffff" stroke-width="13px" stroke-linecap="butt" stroke-dashoffset="85px" fill="transparent" stroke-dasharray="565.48px"></circle>
-                                <text x="64px" y="114px" fill="#ffffff" font-size="40px" font-weight="bold" style="transform:rotate(90deg) translate(0px, -196px)">85%</text>
+                                <circle class="progress_circle" r="90" cx="100" cy="100" stroke="#ffffff" stroke-width="13px" stroke-linecap="butt" stroke-dashoffset="85px" fill="transparent" stroke-dasharray="565.48px" data-progress="85"></circle>
+                                <text x="64px" y="114px" fill="#ffffff" font-size="40px" font-weight="bold" style="transform:rotate(90deg) translate(0px, -196px)">0%</text>
                             </svg>
                             <p><b>Szybsze</b><br>raporty</p>
                        </div>
                        <div>
                             <svg width="150" height="130" viewBox="-25 -25 250 250" version="1.1" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(-90deg)">
                                 <circle r="90" cx="100" cy="100" fill="transparent" stroke="#CCCCCC" stroke-width="13px"></circle>
-                                <circle r="90" cx="100" cy="100" stroke="#ffffff" stroke-width="13px" stroke-linecap="butt" stroke-dashoffset="170px" fill="transparent" stroke-dasharray="565.48px"></circle>
-                                <text x="64px" y="114px" fill="#ffffff" font-size="40px" font-weight="bold" style="transform:rotate(90deg) translate(0px, -196px)">70%</text>
+                                <circle class="progress_circle" r="90" cx="100" cy="100" stroke="#ffffff" stroke-width="13px" stroke-linecap="butt" stroke-dashoffset="170px" fill="transparent" stroke-dasharray="565.48px" data-progress="70"></circle>
+                                <text x="64px" y="114px" fill="#ffffff" font-size="40px" font-weight="bold" style="transform:rotate(90deg) translate(0px, -196px)">0%</text>
                             </svg>
                             <p><b>Większa</b><br>efektywność</p>
                         </div>
                         <div>
                             <svg width="150" height="130" viewBox="-25 -25 250 250" version="1.1" xmlns="http://www.w3.org/2000/svg" style="transform:rotate(-90deg)">
                                 <circle r="90" cx="100" cy="100" fill="transparent" stroke="#CCCCCC" stroke-width="13px"></circle>
-                                <circle r="90" cx="100" cy="100" stroke="#ffffff" stroke-width="13px" stroke-linecap="butt" stroke-dashoffset="17px" fill="transparent" stroke-dasharray="565.48px"></circle>
-                                <text x="64px" y="114px" fill="#ffffff" font-size="40px" font-weight="bold" style="transform:rotate(90deg) translate(0px, -196px)">97%</text>
+                                <circle class="progress_circle" r="90" cx="100" cy="100" stroke="#ffffff" stroke-width="13px" stroke-linecap="butt" stroke-dashoffset="17px" fill="transparent" stroke-dasharray="565.48px" data-progress="97"></circle>
+                                <text x="64px" y="114px" fill="#ffffff" font-size="40px" font-weight="bold" style="transform:rotate(90deg) translate(0px, -196px)">0%</text>
                             </svg>
                             <p><b>Zadowolonych</b><br>użytkowników</p>
                         </div>
     
                     </div>
-                    <div id="group_picture"><img src="images/group_picture.png"></div>
+                    <div id="group_picture">
+                        <picture>
+                            <source srcset="images/group_picture.avif" type="image/avif">
+                            <img src="images/group_picture.png" alt="our team" width="501" height="270">
+                        </picture>
+                        
+                    </div>
                 </div>
                 
                 <div class="box">
@@ -92,23 +130,26 @@
                         <div id="graph">
                             <div class="block">
                                 <p>1 miesiac</p>
-                                <div id="firstData"><p style="rotate: -90deg;">5%</p></div>
+                                <div id="firstData" class="graph_stats"><p style="rotate: -90deg;">5%</p></div>
                             </div>
                             <div class="block">
                                 <p>1 rok</p>
-                                <div id="secondData"><p style="rotate: -90deg;">20%</p></div>
+                                <div id="secondData" class="graph_stats"><p style="rotate: -90deg;">20%</p></div>
                             </div>
                             <div class="block">
                                 <p>10 lat</p>
-                                <div id="thirdData"><p style="rotate: -90deg;">50%</p></div>
+                                <div id="thirdData" class="graph_stats"><p style="rotate: -90deg;">50%</p></div>
                             </div>
                         </div>
                       
                 </div>
                 
             </div>
+            <picture>
+                <source srcset="images/arrow.avif" type="image/avif">
+                <img src="images/arrow.png" class="arrow" width="64" height="64" style="left: 25%; transform: scaleX(-1) rotate(110deg);">            
+            </picture>
             
-            <img src="images/arrow.png" class="arrow" style="position: relative;width: 5%;rotate: -110deg; left: 25%; margin: 10px; transform: scaleX(-1);"> 
             <div id="how_to_get_started">
                 <hr class="custom_hr" style="margin-top: 3%;">
                 <h3>Jak zacząć pracę z RCP? </h3>
@@ -207,6 +248,5 @@
             </div>
              
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
